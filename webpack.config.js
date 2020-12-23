@@ -8,6 +8,37 @@
 const merge = require('webpack-merge');
 const flowDefaults = require('./webpack.generated.js');
 
+
+const vaadinRules = flowDefaults.module.rules.filter(rule => !".css".match(rule.test));
+flowDefaults.module.rules = [
+  ...vaadinRules, 
+    {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            modules: true
+          }
+        }
+      ],
+      include: /\.module\.css$/
+    },
+    {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader'
+      ],
+      exclude: /\.module\.css$/
+    }
+];
+
+console.log("RULES");
+console.log(flowDefaults.module.rules);
+
 /**
  * To change the webpack config, add a new configuration object in
  * the merge arguments below:

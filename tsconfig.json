@@ -12,7 +12,8 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": [
     "frontend/**/*.ts",
