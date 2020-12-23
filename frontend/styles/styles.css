@@ -1,0 +1,10 @@
+.warning {
+  border: 4px solid black;
+  background: yellow;
+  padding: 20px;
+  margin: 40px 0;
+}
+
+p {
+  color: red;
+}

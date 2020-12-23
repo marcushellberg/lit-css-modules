@@ -1,7 +1,8 @@
-import { css, customElement, html, LitElement } from "lit-element";
+import { css, customElement, html } from "lit-element";
+import { View } from "../view";
 
 @customElement("two-view")
-export class TwoView extends LitElement {
+export class TwoView extends View {
   static get styles() {
     return css`
       :host {
@@ -14,7 +15,7 @@ export class TwoView extends LitElement {
   render() {
     return html`
       <h1>View Two</h1>
-
+      <p>Hello</p>
       <div class="warning">This is a warning.</div>
     `;
   }

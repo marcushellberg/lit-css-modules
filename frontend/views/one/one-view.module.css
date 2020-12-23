@@ -1,0 +1,12 @@
+one-view {
+  display: block;
+  padding: var(--lumo-space-m);
+}
+
+.paragraph {
+  color: blue;
+}
+
+.another {
+  color: green;
+}
