@@ -11,11 +11,12 @@ const flowDefaults = require('./webpack.generated.js');
 
 const vaadinRules = flowDefaults.module.rules.filter(rule => 
   !".css".match(rule.test));
-  
+
 flowDefaults.module.rules = [
   ...vaadinRules, 
     {
       test: /\.css$/,
+      include: /\.module\.css$/,
       use: [
         'style-loader',
         {
@@ -26,15 +27,14 @@ flowDefaults.module.rules = [
           }
         }
       ],
-      include: /\.module\.css$/
     },
     {
       test: /\.css$/,
+      exclude: /\.module\.css$/,
       use: [
         'style-loader',
         'css-loader'
-      ],
-      exclude: /\.module\.css$/
+      ],  
     }
 ];
 
