@@ -36,9 +36,6 @@ flowDefaults.module.rules = [
     }
 ];
 
-console.log("RULES");
-console.log(flowDefaults.module.rules);
-
 /**
  * To change the webpack config, add a new configuration object in
  * the merge arguments below:
