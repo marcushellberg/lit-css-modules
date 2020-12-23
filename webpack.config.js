@@ -9,7 +9,9 @@ const merge = require('webpack-merge');
 const flowDefaults = require('./webpack.generated.js');
 
 
-const vaadinRules = flowDefaults.module.rules.filter(rule => !".css".match(rule.test));
+const vaadinRules = flowDefaults.module.rules.filter(rule => 
+  !".css".match(rule.test));
+  
 flowDefaults.module.rules = [
   ...vaadinRules, 
     {
